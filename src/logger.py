@@ -31,7 +31,7 @@ class AttackLogger:
 
         return "Unknown", "Unknown", "Unknown"
 
-    def log_attempt(self, ip, protocol, username, password , client_version="UNKNOWN"):
+    def log_attempt(self, ip, protocol, username, password , status , command=None , client_version="UNKNOWN"):
         now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         country, city, isp = self.get_ip_info(ip)
         try:
@@ -40,10 +40,12 @@ class AttackLogger:
             cursor = conn.cursor()
 
             sql = """INSERT INTO attacks
-                    (timestamp, protocol, ip_address, country, city, isp, username, password, client_version)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                     (ip_address, protocol, username, password, status, command, client_version, timestamp, country, \
+                      city, isp)
+                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
-            values = (now, protocol, ip, country, city, isp, username, password, client_version)
+            # Ici on fait bien attention à l'ordre !
+            values = (ip, protocol, username, password, status, command, client_version, now, country, city, isp)
 
             cursor.execute(sql, values)
             conn.commit()

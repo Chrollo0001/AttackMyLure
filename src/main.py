@@ -2,6 +2,7 @@ import socket
 import paramiko
 import threading
 import time
+import os
 
 
 from logger import AttackLogger
@@ -13,6 +14,10 @@ def handle_conn(client , ip_source , log , hostKey):
     server = LureServer(ip_source, log)
     try:
         transport.start_server(server=server)
+        chan = transport.accept(30)
+        if chan is not None:
+            server.event.wait(10)
+            server.handle_shell(chan)
     except Exception as e:
         pass
 
@@ -45,7 +50,7 @@ def http_lure(log):
 
 
 
-def ssh_listener():
+def ssh_listener(log, hostKey):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server_socket.bind(('0.0.0.0', 2222))
@@ -56,15 +61,26 @@ def ssh_listener():
     while True:
         client , addr = server_socket.accept()
 
-        t = threading.Thread(target=handle_conn , args=(client , addr[0] , log , hostKey))
+        t = threading.Thread(target=handle_conn , args=(client , ip_test , log , hostKey))
         t.start()
 
 def start_server():
     log = AttackLogger()
-    hostKey = paramiko.RSAKey.generate(2048)
+
+    #Clé fixe
+    key_file ="private_key.key"
+
+    if os.path.exists(key_file):
+        print("[*] Loading SSH KEY")
+        hostKey = paramiko.RSAKey.from_private_key_file(key_file)
+    else:
+        print("[*] Creating SSH KEY")
+        hostKey = paramiko.RSAKey.generate(2048)
+        hostKey.write_private_key_file(key_file)
+
 
             # On lance le thread SSH
-    threading.Thread(target=ssh_listener, daemon=True).start()
+    threading.Thread(target=ssh_listener, args=(log, hostKey), daemon=True).start()
 
             # On lance le thread HTTP
     threading.Thread(target=http_lure, args=(log,), daemon=True).start()
