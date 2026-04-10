@@ -1,4 +1,7 @@
+import re
 import threading
+import requests
+import os
 
 import paramiko
 
@@ -7,6 +10,48 @@ class LureServer(paramiko.ServerInterface):
         self.client_ip = client_ip
         self.logger = logger
         self.event = threading.Event()
+
+    def capture_payload(self, command):
+        # Chemin absolu vers le dossier captured_payloads
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        target_dir = os.path.join(script_dir, "captured_payloads")
+
+        # Regex Find URL
+        urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', command)
+
+        for url in urls:
+            try:
+                print(f"[!] CIBLE DÉTECTÉE : {url}. Tentative de capture...")
+
+                # On crée le dossier s'il n'existe pas
+                if not os.path.exists(target_dir):
+                    os.makedirs(target_dir)
+                    print(f"[*] Dossier créé : {target_dir}")
+
+                # Téléchargement sécurisé
+                print(f"[*] Téléchargement depuis : {url}")
+                response = requests.get(url, timeout=5, stream=True)
+                print(f"[*] Status code: {response.status_code}")
+
+                if response.status_code == 200:
+                    # On nettoie le nom du fichier
+                    filename = url.split("/")[-1] or "index.html"
+                    filepath = os.path.join(target_dir, f"{self.client_ip}_{filename}")
+
+                    with open(filepath, "wb") as f:
+                        f.write(response.content)
+
+                    file_size = os.path.getsize(filepath)
+                    print(f"[+++] SUCCÈS : Script volé -> {filepath} ({file_size} bytes)")
+                else:
+                    print(f"[?] Code HTTP {response.status_code} pour {url}")
+
+            except requests.exceptions.Timeout:
+                print(f"[-] Timeout lors du téléchargement de {url}")
+            except requests.exceptions.ConnectionError as e:
+                print(f"[-] Erreur de connexion pour {url} : {e}")
+            except Exception as e:
+                print(f"[-] Erreur lors de la capture de {url} : {e}")
 
     def check_auth_password(self, username, password):
         print(f"[*] Tentative de connexion SSH de {self.client_ip} avec le nom d'utilisateur '{username}' et le mot de passe '{password}'")
@@ -39,43 +84,44 @@ class LureServer(paramiko.ServerInterface):
         command = ""
         while True:
             try:
-                # On reçoit les touches une par une
                 char = channel.recv(1).decode(errors='ignore')
-
                 if not char:
                     break
 
-                # Si Entrée
                 if char == "\r" or char == "\n":
                     channel.send("\r\n")
-                    if command.strip():
-                        print(f"[!!!] COMMANDE de {self.client_ip}: {command}")
-                        # On log la commande comme si c'était un "password" pour réutiliser ton logger
-                        print(f"[!!!] COMMANDE : {command}")
-                        self.logger.log_attempt(self.client_ip, "COMMAND", "root", None, "SHELL", command, "UNKNOWN")
+                    clean_cmd = command.strip()
 
-                        # Réponse systématique "commande introuvable"
-                        channel.send(f"-bash: {command.split()[0]}: command not found\r\n")
+                    if clean_cmd:
+                        print(f"[!!!] COMMANDE de {self.client_ip}: {clean_cmd}")
+
+                        # --- NOUVEAU : DÉTECTION DE PAYLOAD ---
+                        if "curl" in clean_cmd or "wget" in clean_cmd:
+                            self.capture_payload(clean_cmd)  # On appelle la capture
+
+                        # Log  DB
+                        self.logger.log_attempt(self.client_ip, "COMMAND", "root", None, "SHELL", clean_cmd, "UNKNOWN")
+
+                        # Réponse
+                        channel.send(f"-bash: {clean_cmd.split()[0]}: command not found\r\n")
 
                     command = ""
                     channel.send(prompt)
 
-                # Si Retour arrière (BackSpace)
                 elif char == "\x7f" or char == "\x08":
                     if len(command) > 0:
                         command = command[:-1]
-                        channel.send("\b \b")  # Efface visuellement le caractère
+                        channel.send("\b \b")
 
-                # On ne traite pas les flèches directionnelles (trop complexe pour un début)
                 elif char == "\x1b":
                     continue
 
-                # Sinon on accumule les caractères
                 else:
                     command += char
-                    channel.send(char)  # Echo pour que l'attaquant voit ce qu'il tape
+                    channel.send(char)
 
-            except:
+            except Exception as e:
+                print(f"Erreur shell : {e}")
                 break
 
         channel.close()

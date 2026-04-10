@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf_token" content="P7eKlrq3W8FcVDAZ7zkdOXKInTwN6jwL0sEpGalU"/>
+
+        <title>Pastebin | a</title>
+
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
+
+                <meta name="description" content="  print(&quot;Salut&quot;)">
+        <link rel="canonical" href="https://pastebin.fr/019d7871-0691-729f-b686-eecfe2d2d752" />
+    
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+
+        <style>
+    :root {
+         --danger-50:oklch(0.971 0.013 17.38);  --danger-100:oklch(0.936 0.032 17.717);  --danger-200:oklch(0.885 0.062 18.334);  --danger-300:oklch(0.808 0.114 19.571);  --danger-400:oklch(0.704 0.191 22.216);  --danger-500:oklch(0.637 0.237 25.331);  --danger-600:oklch(0.577 0.245 27.325);  --danger-700:oklch(0.505 0.213 27.518);  --danger-800:oklch(0.444 0.177 26.899);  --danger-900:oklch(0.396 0.141 25.723);  --danger-950:oklch(0.258 0.092 26.042);  --gray-50:oklch(0.985 0 0);  --gray-100:oklch(0.967 0.001 286.375);  --gray-200:oklch(0.92 0.004 286.32);  --gray-300:oklch(0.871 0.006 286.286);  --gray-400:oklch(0.705 0.015 286.067);  --gray-500:oklch(0.552 0.016 285.938);  --gray-600:oklch(0.442 0.017 285.786);  --gray-700:oklch(0.37 0.013 285.805);  --gray-800:oklch(0.274 0.006 286.033);  --gray-900:oklch(0.21 0.006 285.885);  --gray-950:oklch(0.141 0.005 285.823);  --info-50:oklch(0.97 0.014 254.604);  --info-100:oklch(0.932 0.032 255.585);  --info-200:oklch(0.882 0.059 254.128);  --info-300:oklch(0.809 0.105 251.813);  --info-400:oklch(0.707 0.165 254.624);  --info-500:oklch(0.623 0.214 259.815);  --info-600:oklch(0.546 0.245 262.881);  --info-700:oklch(0.488 0.243 264.376);  --info-800:oklch(0.424 0.199 265.638);  --info-900:oklch(0.379 0.146 265.522);  --info-950:oklch(0.282 0.091 267.935);  --primary-50:oklch(0.97 0.014 254.604);  --primary-100:oklch(0.932 0.032 255.585);  --primary-200:oklch(0.882 0.059 254.128);  --primary-300:oklch(0.809 0.105 251.813);  --primary-400:oklch(0.707 0.165 254.624);  --primary-500:oklch(0.623 0.214 259.815);  --primary-600:oklch(0.546 0.245 262.881);  --primary-700:oklch(0.488 0.243 264.376);  --primary-800:oklch(0.424 0.199 265.638);  --primary-900:oklch(0.379 0.146 265.522);  --primary-950:oklch(0.282 0.091 267.935);  --success-50:oklch(0.982 0.018 155.826);  --success-100:oklch(0.962 0.044 156.743);  --success-200:oklch(0.925 0.084 155.995);  --success-300:oklch(0.871 0.15 154.449);  --success-400:oklch(0.792 0.209 151.711);  --success-500:oklch(0.723 0.219 149.579);  --success-600:oklch(0.627 0.194 149.214);  --success-700:oklch(0.527 0.154 150.069);  --success-800:oklch(0.448 0.119 151.328);  --success-900:oklch(0.393 0.095 152.535);  --success-950:oklch(0.266 0.065 152.934);  --warning-50:oklch(0.987 0.022 95.277);  --warning-100:oklch(0.962 0.059 95.617);  --warning-200:oklch(0.924 0.12 95.746);  --warning-300:oklch(0.879 0.169 91.605);  --warning-400:oklch(0.828 0.189 84.429);  --warning-500:oklch(0.769 0.188 70.08);  --warning-600:oklch(0.666 0.179 58.318);  --warning-700:oklch(0.555 0.163 48.998);  --warning-800:oklch(0.473 0.137 46.201);  --warning-900:oklch(0.414 0.112 45.904);  --warning-950:oklch(0.279 0.077 45.635);     }
+
+    </style>
+        <link rel="preload" as="style" href="https://pastebin.fr/build/assets/app-ChlNvpiF.css" /><link rel="stylesheet" href="https://pastebin.fr/build/assets/app-ChlNvpiF.css" data-navigate-track="reload" />    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}</style>
+</head>
+    <body class="flex flex-col min-h-screen bg-white dark:bg-zinc-800 dark:text-white">
+        <header class="[grid-area:header] z-10 min-h-14  py-4 bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700" x-data="" x-bind:style="{ position: &#039;sticky&#039;, top: $el.offsetTop + &#039;px&#039;, &#039;max-height&#039;: &#039;calc(100vh - &#039; + $el.offsetTop + &#039;px)&#039; }" data-flux-header>
+            <div class="mx-auto w-full h-full [:where(&)]:max-w-7xl px-6 lg:px-8 flex items-center">
+            <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg w-10 inline-flex -ms-2.5 bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white      shrink-0 lg:hidden" data-flux-button="data-flux-button" x-data="" x-on:click="$dispatch('flux-sidebar-toggle')" aria-label="Toggle sidebar" data-flux-sidebar-toggle="data-flux-sidebar-toggle">
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 6.75A.75.75 0 0 1 2.75 6h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 6.75Zm0 6.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/>
+</svg>
+    </button>
+    <div class="flex gap-2 items-center">
+        <img src="https://pastebin.fr/images/logo.png" class="size-12" alt="Logo Pastebin.fr">
+        <div>
+            <a href="https://pastebin.fr" wire:navigate>
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-2xl [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Pastebin</div>
+            </a>
+            <p class="[:where(&amp;)]:text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-text >Retrouvez, créez et partagez vos snippets en temps réel.</p>        </div>
+    </div>
+    <div class="flex-1" data-flux-spacer></div>
+    <nav class="flex items-center gap-1 py-3  -mb-px max-lg:hidden" data-flux-navbar>
+    <div
+    class="contents"
+    x-data
+    x-on:click="$el.querySelector('button[disabled]') || $dispatch('modal-show', { name: 'search-paste' })"
+            x-on:keydown.cmd.k.document="$event.preventDefault(); $dispatch('modal-show', { name: 'search-paste' })"
+        data-flux-modal-trigger
+>
+    <div class="w-full relative block group/input w-32!" data-flux-input>
+                            <div class="pointer-events-none absolute top-0 bottom-0 flex items-center justify-center text-xs text-zinc-400/75 ps-3 start-0">
+                    <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+
+                        </div>
+            
+            <input
+                type="text"
+                
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-10 pe-3 bg-zinc-800/5 dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 placeholder-zinc-500 disabled:placeholder-zinc-400 dark:text-zinc-200 dark:placeholder-white/60 dark:disabled:placeholder-white/40 border-0"
+                                                                                data-flux-control
+                data-flux-group-target
+                                            >
+
+            <div class="absolute top-0 bottom-0 flex items-center gap-x-1.5 pe-3 end-0 text-xs text-zinc-400">
+                
+                
+                
+                
+                
+                
+                
+                            </div>
+        </div>
+</div>
+        <a href="https://pastebin.fr/create" class="px-3 h-8 flex items-center rounded-lg relative px-2.5! text-zinc-500 dark:text-white/80  data-current:after:absolute data-current:after:-bottom-3 data-current:after:inset-x-0 data-current:after:h-[2px] [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] hover:text-zinc-800 dark:hover:text-white data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) hover:bg-zinc-800/5 dark:hover:bg-white/10 hover:data-current:bg-(--hover-fill) data-current:after:bg-(--color-accent-content)" data-flux-navbar-items="data-flux-navbar-items">
+        <div class="relative">
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z"/>
+</svg>
+
+                    
+                    </div>
+    
+            <div class="ms-3 flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Pastebin</div>
+    </a>
+        <a href="https://pastebin.fr/blog" class="px-3 h-8 flex items-center rounded-lg relative px-2.5! text-zinc-500 dark:text-white/80  data-current:after:absolute data-current:after:-bottom-3 data-current:after:inset-x-0 data-current:after:h-[2px] [--hover-fill:color-mix(in_oklab,_var(--color-accent-content),_transparent_90%)] hover:text-zinc-800 dark:hover:text-white data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) hover:bg-zinc-800/5 dark:hover:bg-white/10 hover:data-current:bg-(--hover-fill) data-current:after:bg-(--color-accent-content)" data-flux-navbar-items="data-flux-navbar-items">
+        <div class="relative">
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/>
+</svg>
+
+                    
+                    </div>
+    
+            <div class="ms-3 flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Blog</div>
+    </a>
+        <div data-orientation="vertical" role="none" class="border-0 [print-color-adjust:exact] bg-zinc-800/15 dark:bg-white/20 self-stretch self-center w-px my-2" data-flux-separator></div>
+        <a href="https://pastebin.fr/create" data-flux-button="data-flux-button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-[var(--color-accent)] hover:bg-[color-mix(in_oklab,_var(--color-accent),_transparent_10%)] text-[var(--color-accent-foreground)] border border-black/10 dark:border-0 shadow-[inset_0px_1px_--theme(--color-white/.2)] [[data-flux-button-group]_&amp;]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)]" data-flux-group-target="data-flux-group-target" wire:navigate="">
+        Créer un paste
+    </a>
+</nav>
+        </div>
+    </header>
+
+<ui-sidebar-toggle class="z-20 fixed inset-0 bg-black/10 hidden data-flux-sidebar-on-mobile:not-data-flux-sidebar-collapsed-mobile:block" data-flux-sidebar-backdrop></ui-sidebar-toggle>
+
+<ui-sidebar
+    class="[grid-area:sidebar] z-1 flex flex-col gap-4 [:where(&amp;)]:w-64 p-4 data-flux-sidebar-collapsed-desktop:w-14 data-flux-sidebar-collapsed-desktop:px-2 data-flux-sidebar-collapsed-desktop:cursor-e-resize rtl:data-flux-sidebar-collapsed-desktop:cursor-w-resize max-lg:data-flux-sidebar-cloak:hidden data-flux-sidebar-on-mobile:data-flux-sidebar-collapsed-mobile:-translate-x-full data-flux-sidebar-on-mobile:data-flux-sidebar-collapsed-mobile:rtl:translate-x-full z-20! data-flux-sidebar-on-mobile:start-0! data-flux-sidebar-on-mobile:fixed! data-flux-sidebar-on-mobile:top-0! data-flux-sidebar-on-mobile:min-h-dvh! data-flux-sidebar-on-mobile:max-h-dvh! max-h-dvh overflow-y-auto overscroll-contain lg:hidden bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-700" x-init="$el.classList.add(&#039;transition-transform&#039;)"
+     collapsible="mobile"          sticky     x-data
+    data-flux-sidebar-cloak
+    data-flux-sidebar
+>
+    <nav class="flex flex-col overflow-visible min-h-auto" data-flux-sidebar-nav>
+    <ui-tooltip position="right center"  data-flux-tooltip >
+        <a href="https://pastebin.fr/create" class="h-8 in-data-flux-sidebar-on-mobile:h-10 relative flex items-center gap-3 rounded-lg in-data-flux-sidebar-collapsed-desktop:w-10 in-data-flux-sidebar-collapsed-desktop:justify-center py-0 text-start w-full px-3 has-data-flux-navlist-badge:not-in-data-flux-sidebar-collapsed-desktop:pe-1.5 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent in-data-flux-sidebar-group-dropdown:w-auto! in-data-flux-sidebar-group-dropdown:px-2! in-data-flux-sidebar-group-dropdown:text-zinc-800! in-data-flux-sidebar-group-dropdown:bg-white! in-data-flux-sidebar-group-dropdown:hover:bg-zinc-50! dark:in-data-flux-sidebar-group-dropdown:text-white! dark:in-data-flux-sidebar-group-dropdown:bg-transparent! dark:in-data-flux-sidebar-group-dropdown:hover:bg-zinc-600!" data-flux-sidebar-item="data-flux-sidebar-item">
+        <div class="relative">
+                                    <svg class="shrink-0 [:where(&amp;)]:size-6 size-4 in-data-flux-sidebar-group-dropdown:text-zinc-400! dark:in-data-flux-sidebar-group-dropdown:text-white/80! [[data-flux-sidebar-item]:hover_&]:text-current!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z"/>
+</svg>
+
+                        
+                            </div>
+        
+                    <div class="
+                in-data-flux-sidebar-collapsed-desktop:not-in-data-flux-sidebar-group-dropdown:hidden
+                flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Pastebin</div>
+    </a>
+
+    <div popover="manual" class="relative py-2 px-2.5 rounded-md text-xs text-white font-medium bg-zinc-800 dark:bg-zinc-700 dark:border dark:border-white/10 p-0 overflow-visible not-in-data-flux-sidebar-collapsed-desktop:hidden in-data-flux-sidebar-group-dropdown:hidden cursor-default" data-flux-tooltip-content>
+    Pastebin
+
+    </div>
+
+            </ui-tooltip>
+        <ui-tooltip position="right center"  data-flux-tooltip >
+        <a href="https://pastebin.fr/blog" class="h-8 in-data-flux-sidebar-on-mobile:h-10 relative flex items-center gap-3 rounded-lg in-data-flux-sidebar-collapsed-desktop:w-10 in-data-flux-sidebar-collapsed-desktop:justify-center py-0 text-start w-full px-3 has-data-flux-navlist-badge:not-in-data-flux-sidebar-collapsed-desktop:pe-1.5 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent in-data-flux-sidebar-group-dropdown:w-auto! in-data-flux-sidebar-group-dropdown:px-2! in-data-flux-sidebar-group-dropdown:text-zinc-800! in-data-flux-sidebar-group-dropdown:bg-white! in-data-flux-sidebar-group-dropdown:hover:bg-zinc-50! dark:in-data-flux-sidebar-group-dropdown:text-white! dark:in-data-flux-sidebar-group-dropdown:bg-transparent! dark:in-data-flux-sidebar-group-dropdown:hover:bg-zinc-600!" data-flux-sidebar-item="data-flux-sidebar-item">
+        <div class="relative">
+                                    <svg class="shrink-0 [:where(&amp;)]:size-6 size-4 in-data-flux-sidebar-group-dropdown:text-zinc-400! dark:in-data-flux-sidebar-group-dropdown:text-white/80! [[data-flux-sidebar-item]:hover_&]:text-current!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/>
+</svg>
+
+                        
+                            </div>
+        
+                    <div class="
+                in-data-flux-sidebar-collapsed-desktop:not-in-data-flux-sidebar-group-dropdown:hidden
+                flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Blog</div>
+    </a>
+
+    <div popover="manual" class="relative py-2 px-2.5 rounded-md text-xs text-white font-medium bg-zinc-800 dark:bg-zinc-700 dark:border dark:border-white/10 p-0 overflow-visible not-in-data-flux-sidebar-collapsed-desktop:hidden in-data-flux-sidebar-group-dropdown:hidden cursor-default" data-flux-tooltip-content>
+    Blog
+
+    </div>
+
+            </ui-tooltip>
+</nav>
+</ui-sidebar>
+
+        <div class="my-8 mx-4 text-justify grow flex flex-col">
+            <div class="window mx-auto grow">
+                <div wire:snapshot="{&quot;data&quot;:{&quot;pastebin&quot;:[null,{&quot;class&quot;:&quot;App\\Models\\Paste&quot;,&quot;key&quot;:&quot;019d7871-0691-729f-b686-eecfe2d2d752&quot;,&quot;s&quot;:&quot;mdl&quot;}],&quot;componentFileAttachments&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;areSchemaStateUpdateHooksDisabledForTesting&quot;:false,&quot;discoveredSchemaNames&quot;:[[&quot;productInfolist&quot;],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;WcWnTppadNiLB26tOF80&quot;,&quot;name&quot;:&quot;view-paste&quot;,&quot;path&quot;:&quot;019d7871-0691-729f-b686-eecfe2d2d752&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;fr&quot;},&quot;checksum&quot;:&quot;65b0e9b7aad9e9406257ecc014149506d8cdfb2f9eb4e2a20c5662af03b923c4&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="WcWnTppadNiLB26tOF80" class="flex flex-col gap-4">
+    
+    <h1 class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-2xl [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>a</h1>
+
+        
+    
+        <div class="fi-sc  fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));" x-data="filamentSchema({ livewireId: 'WcWnTppadNiLB26tOF80' })" x-on:form-validation-error.window="handleFormValidationError">
+                                                
+        <div
+                            wire:partial="schema-component::productInfolist.content"
+                                        x-data="filamentSchemaComponent({
+                    path: 'content',
+                    containerPath: '',
+                    $wire,
+                })"
+                                                        class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="WcWnTppadNiLB26tOF80.productInfolist.content"        >
+                            <div
+                    class="fi-sc-component"
+                >
+                    
+        <div class="fi-in-entry">
+                            <dt class="fi-in-entry-label fi-hidden">
+                    Content                </dt>
+            
+            
+            <div class="fi-in-entry-content-col">
+                
+                <dd class="fi-in-entry-content-ctn">
+                    
+                    <div  class="fi-in-entry-content">
+                        
+        <div class="fi-copyable fi-in-code" x-on:click="window.navigator.clipboard.writeText('  print(\u0022Salut\u0022)')
+$tooltip('Copied!', {
+    theme: $store.theme,
+    timeout: 1500,
+})">
+            <pre class="phiki language-python github-dark phiki-themes" data-language="python" style="background-color: #24292e;color: #e1e4e8;;--phiki-dark-background-color: #24292e;--phiki-dark-color: #e1e4e8"><code><span class="line"><span class="token">  </span><span class="token" style="color: #79b8ff;;--phiki-dark-color: #79b8ff">print</span><span class="token">(</span><span class="token" style="color: #9ecbff;;--phiki-dark-color: #9ecbff">&quot;</span><span class="token" style="color: #9ecbff;;--phiki-dark-color: #9ecbff">Salut</span><span class="token" style="color: #9ecbff;;--phiki-dark-color: #9ecbff">&quot;</span><span class="token">)</span><span class="token">
+</span></span></code></pre>        </div>
+
+                            </div>
+
+                                    </dd>
+
+                            </div>
+        </div>
+
+                        </div>
+                    </div>
+
+                                            </div>
+
+        
+
+    <p class="[:where(&amp;)]:text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-text >Créé il y a 2 heures.</p></div>
+            </div>
+        </div>
+
+        <footer class="flex flex-col gap-8 py-8 p-4 items-center bg-zinc-100 dark:bg-zinc-700 border-t border-zinc-200 dark:border-zinc-600">
+    <div class="window grid lg:grid-cols-3 gap-4">
+        <div class="flex items-center gap-4">
+            <img src="https://pastebin.fr/images/logo.png" class="size-12" alt="Logo Pastebin.fr">
+            <div>
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-2xl [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Pastebin</div>
+                <p class="[:where(&amp;)]:text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-text >La plateforme francophone pour partager, rechercher et conserver vos snippets de code et textes techniques.</p>            </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)]" href="https://pastebin.fr/legal-notices" data-flux-link >Mentions légales</a>            <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)]" href="https://pastebin.fr/terms" data-flux-link >CGU</a>            <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)]" href="https://pastebin.fr/blog" data-flux-link >Blog</a>        </div>
+
+        
+
+        <div class="flex flex-col gap-2">
+                            <a class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)]" href="https://pastebin.fr/blog/decouvrez-pastebin-fr/" data-flux-link >Découvrez Pastebin.fr : votre espace simple et rapide pour partager du texte en ligne</a>                    </div>
+    </div>
+
+    <p class="[:where(&amp;)]:text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-text >© 2026 Pastebin. Tous droits réservés.</p></footer>
+
+        <div wire:snapshot="{&quot;data&quot;:{&quot;search&quot;:null,&quot;paginators&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;SG02EpVmzkcLjk9ugc8H&quot;,&quot;name&quot;:&quot;components.search-paste&quot;,&quot;path&quot;:&quot;019d7871-0691-729f-b686-eecfe2d2d752&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;fr&quot;},&quot;checksum&quot;:&quot;1095cb1706981a9284f783c8831457614b60df402d026540dd9e68487960f1a0&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="SG02EpVmzkcLjk9ugc8H">
+    <ui-modal  data-flux-modal>
+    
+    <dialog
+        wire:ignore.self 
+        class="p-6 [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs shadow-lg rounded-xl bg-white dark:bg-zinc-800 border border-transparent dark:border-zinc-700 container"
+         data-modal="search-paste"                 x-data
+                    x-on:modal-show.document="
+                if ($event.detail.name === 'search-paste' && ($event.detail.scope === 'SG02EpVmzkcLjk9ugc8H')) $el.showModal();
+                if ($event.detail.name === 'search-paste' && (! $event.detail.scope)) $el.showModal();
+            "
+            x-on:modal-close.document="
+                if ($event.detail.name === 'search-paste' && ($event.detail.scope === 'SG02EpVmzkcLjk9ugc8H')) $el.close();
+                if (! $event.detail.name || ($event.detail.name === 'search-paste' && (! $event.detail.scope))) $el.close();
+            "
+            >
+        <div class="space-y-6">
+            <div>
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Rechercher un Pastebin</div>
+            </div>
+            <div class="w-full relative block group/input" data-flux-input>
+                            <div class="pointer-events-none absolute top-0 bottom-0 flex items-center justify-center text-xs text-zinc-400/75 ps-3 start-0">
+                    <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/>
+</svg>
+
+                        </div>
+            
+            <input
+                type="search"
+                
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-10 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5" wire:model.live.debounce.250ms="search" placeholder="Mon pastebin"
+                 name="search"                                                                 data-flux-control
+                data-flux-group-target
+                 wire:loading.class="pe-10"                  wire:target="search"             >
+
+            <div class="absolute top-0 bottom-0 flex items-center gap-x-1.5 pe-3 end-0 text-xs text-zinc-400">
+                
+                                    <svg class="shrink-0 [:where(&amp;)]:size-5 animate-spin" wire:loading="" wire:target="search" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+</svg>
+                        
+                
+                
+                
+                
+                
+                            </div>
+        </div>
+
+            <!--[if BLOCK]><![endif]-->                <p class="[:where(&amp;)]:text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-text >Aucun paste trouvé.</p>            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->            <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+                    <div class="absolute top-0 end-0 mt-4 me-4">
+                <ui-close data-flux-modal-close>
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white      text-zinc-400! hover:text-zinc-800! dark:text-zinc-500! dark:hover:text-white!" data-flux-button="data-flux-button" aria-label="Close modal">
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>
+</svg>
+    </button>
+</ui-close>
+            </div>
+            </dialog>
+</ui-modal>
+</div>
+        <div wire:snapshot="{&quot;data&quot;:{&quot;isFilamentNotificationsComponent&quot;:true,&quot;notifications&quot;:[[],{&quot;class&quot;:&quot;Filament\\Notifications\\Collection&quot;,&quot;s&quot;:&quot;wrbl&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;EufjJTsnYmkHfeJKTdzC&quot;,&quot;name&quot;:&quot;notifications&quot;,&quot;path&quot;:&quot;019d7871-0691-729f-b686-eecfe2d2d752&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;fr&quot;},&quot;checksum&quot;:&quot;d40420a529bfdce64a5b671bde0d179f2441f8e7366eec796c0f053dd1a2e623&quot;}" wire:effects="{&quot;partials&quot;:[],&quot;listeners&quot;:[&quot;notificationsSent&quot;,&quot;notificationSent&quot;,&quot;notificationClosed&quot;]}" wire:id="EufjJTsnYmkHfeJKTdzC">
+    <div
+        class="fi-no fi-align-right fi-vertical-align-start"
+        role="status"
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    </div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+</div>
+
+        <script>
+        window.filamentData = []    </script>
+
+            
+            <script
+                src="https://pastebin.fr/js/filament/actions/actions.js?v=4.7.0.0"
+                
+                
+                
+                
+                
+                
+            ></script>
+        
+                
+            <script
+                src="https://pastebin.fr/js/filament/notifications/notifications.js?v=4.7.0.0"
+                
+                
+                
+                
+                
+                
+            ></script>
+        
+                
+            <script
+                src="https://pastebin.fr/js/filament/schemas/schemas.js?v=4.7.0.0"
+                
+                
+                
+                
+                
+                
+            ></script>
+        
+                
+            <script
+                src="https://pastebin.fr/js/filament/support/support.js?v=4.7.0.0"
+                
+                
+                
+                
+                
+                
+            ></script>
+        
+                
+            <script
+                src="https://pastebin.fr/js/filament/tables/tables.js?v=4.7.0.0"
+                
+                
+                
+                
+                
+                
+            ></script>
+        
+    
+<style>
+    :root {
+            }
+
+    </style>
+        <link rel="modulepreload" as="script" href="https://pastebin.fr/build/assets/app-l0sNRNKZ.js" /><script type="module" src="https://pastebin.fr/build/assets/app-l0sNRNKZ.js" data-navigate-track="reload"></script>        <script src="/flux/flux.min.js?id=b138f6c9" data-navigate-once></script>
+    <script src="/livewire/livewire.min.js?id=df3a17f2"   data-csrf="P7eKlrq3W8FcVDAZ7zkdOXKInTwN6jwL0sEpGalU" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+</body>
+</html>

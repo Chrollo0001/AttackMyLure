@@ -78,7 +78,6 @@ def start_server():
         hostKey = paramiko.RSAKey.generate(2048)
         hostKey.write_private_key_file(key_file)
 
-
             # On lance le thread SSH
     threading.Thread(target=ssh_listener, args=(log, hostKey), daemon=True).start()
 
