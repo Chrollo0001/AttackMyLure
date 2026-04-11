@@ -14,44 +14,55 @@ class AttackLogger:
             'database': 'attack_my_lure'
         }
 
-    def get_ip_info(self, ip):
-        if ip == "127.0.0.1" or ip == "localhost":
-            return "France", "Localhost", "Internal Network"
+    def get_advanced_ip_info(self, ip):
+        if ip in ["127.0.0.1", "localhost", ]:  # On ignore tes IPs de test
+            return "France", "Localhost", "Internal", "AS000", 0,0
 
         try:
-            response = requests.get(f"http://ip-api.com/json/{ip}", timeout=5).json()
+            # Utilisation de ip-api.com (version pro ou gratuite avec champs spécifiques)
+            # On demande : pays, ville, isp, asn, et proxy (mobile/proxy)
+            url = f"http://ip-api.com/json/{ip}?fields=status,message,country,city,isp,as,mobile,proxy,hosting"
+            response = requests.get(url, timeout=5).json()
+
             if response.get('status') == 'success':
+                is_vpn = 1 if (response.get('proxy') or response.get('hosting')) else 0
+                threat_score = 50 if is_vpn else 10  # Score arbitraire pour commencer
+
                 return (
                     response.get('country', 'Unknown'),
                     response.get('city', 'Unknown'),
-                    response.get('isp', 'Unknown')
+                    response.get('isp', 'Unknown'),
+                    response.get('as', 'Unknown'),  # ASN
+                    is_vpn,
+                    threat_score
                 )
         except Exception as e:
-            print(f"[-] Erreur GeoIP : {e}")
+            print(f"[-] Erreur GeoIP Avancée : {e}")
 
-        return "Unknown", "Unknown", "Unknown"
+        return "Unknown", "Unknown", "Unknown", "Unknown", 0, 0
 
-    def log_attempt(self, ip, protocol, username, password , status , command=None , client_version="UNKNOWN"):
+    def log_attempt(self, ip, protocol, username, password, status, command=None, client_version="UNKNOWN",
+                    attack_type=None, endpoint=None, payload=None, http_method=None, scanner_name=None, headers=None, response_code=200):
         now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        country, city, isp = self.get_ip_info(ip)
+        # On récupère les nouvelles infos
+        country, city, isp, asn, is_vpn, threat_score = self.get_advanced_ip_info(ip)
+
         try:
-            # Connexion à MySQL
             conn = mysql.connector.connect(**self.config)
             cursor = conn.cursor()
 
             sql = """INSERT INTO attacks
-                     (ip_address, protocol, username, password, status, command, client_version, timestamp, country, \
-                      city, isp)
-                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                     (ip_address, protocol, username, password, status, command, client_version,
+                      timestamp, country, city, isp, asn, is_vpn, threat_score,
+                      attack_type, endpoint, payload, http_method, scanner_name, headers, response_code)
+                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
-            # Ici on fait bien attention à l'ordre !
-            values = (ip, protocol, username, password, status, command, client_version, now, country, city, isp)
+            values = (ip, protocol, username, password, status, command, client_version,
+                      now, country, city, isp, asn, is_vpn, threat_score,
+                      attack_type, endpoint, payload, http_method, scanner_name, headers, response_code)
 
             cursor.execute(sql, values)
             conn.commit()
-
-            print(f"[*] [MySQL] Succès : {username}:{password} enregistré.")
-
             cursor.close()
             conn.close()
         except mysql.connector.Error as err:

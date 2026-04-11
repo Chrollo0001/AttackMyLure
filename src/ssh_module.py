@@ -75,6 +75,13 @@ class LureServer(paramiko.ServerInterface):
         return True
 
     def handle_shell(self, channel):
+        fake_fs = {
+            '/etc/passwd': 'root:x:0:0:root:/root:/bin/bash\nbin:x:1:1:bin:/bin:/sbin/nologin\ndaemon:x:2:2:daemon:/sbin:/sbin/nologin',
+            '/root/.bash_history': 'ls -la\ncat /etc/passwd\nuname -a\n',
+            '/var/log/auth.log': 'Oct 27 10:12:44 debian sshd[1234]: Accepted password for root from 192.168.1.45 port 54321 ssh2'
+        }
+        current_dir = '/root'
+
         channel.send("\r\nLinux debian 5.10.0-8-amd64 #1 SMP Debian 5.10.46-4\r\n")
         channel.send("Last login: Fri Oct 27 10:12:44 2023 from 192.168.1.45\r\n")
 
@@ -94,16 +101,36 @@ class LureServer(paramiko.ServerInterface):
 
                     if clean_cmd:
                         print(f"[!!!] COMMANDE de {self.client_ip}: {clean_cmd}")
-
-                        # --- NOUVEAU : DÉTECTION DE PAYLOAD ---
-                        if "curl" in clean_cmd or "wget" in clean_cmd:
-                            self.capture_payload(clean_cmd)  # On appelle la capture
-
-                        # Log  DB
                         self.logger.log_attempt(self.client_ip, "COMMAND", "root", None, "SHELL", clean_cmd, "UNKNOWN")
 
-                        # Réponse
-                        channel.send(f"-bash: {clean_cmd.split()[0]}: command not found\r\n")
+                        # --- SIMULATION D'ENVIRONNEMENT RICHE ---
+                        parts = clean_cmd.split()
+                        cmd_name = parts[0]
+                        response = ""
+
+                        if cmd_name == 'whoami':
+                            response = "root\r\n"
+                        elif cmd_name == 'uname' and '-a' in parts:
+                            response = "Linux debian 5.10.0-8-amd64 #1 SMP Debian 5.10.46-4 x86_64 GNU/Linux\r\n"
+                        elif cmd_name == 'cat':
+                            if len(parts) > 1 and parts[1] in fake_fs:
+                                response = fake_fs[parts[1]] + "\r\n"
+                                self.logger.log_attempt(self.client_ip, "FILE_READ", "root", None, "SHELL", f"Read sensitive file: {parts[1]}", "UNKNOWN")
+                            else:
+                                response = f"cat: {parts[1]}: No such file or directory\r\n"
+                        elif cmd_name == 'ls':
+                            response = "total 0\r\n-rw-r--r-- 1 root root 0 Oct 27 10:10 .bash_history\r\n"
+                        elif cmd_name == 'ps' and 'aux' in parts:
+                            response = "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\r\n"
+                            response += "root           1  0.0  0.1  10668  3440 ?        Ss   Oct26   0:02 /sbin/init\r\n"
+                            response += "root         234  0.0  0.2  56344  5380 ?        Ssl  Oct26   0:15 /usr/sbin/sshd -D\r\n"
+                        elif "curl" in cmd_name or "wget" in cmd_name:
+                            self.capture_payload(clean_cmd)
+                            response = "Connecting to host... done.\r\n"
+                        else:
+                            response = f"-bash: {cmd_name}: command not found\r\n"
+
+                        channel.send(response)
 
                     command = ""
                     channel.send(prompt)
