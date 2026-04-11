@@ -1,0 +1,22 @@
+# Fichiers de clés et de certificats
+*.key
+*.pem
+
+# Fichiers de base de données
+*.db
+data/
+src/data/
+
+# Cache et fichiers compilés Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Répertoires de payloads capturés
+src/captured_payloads/
+
+# Fichiers de configuration d'IDE
+.idea/
+.vscode/
+
